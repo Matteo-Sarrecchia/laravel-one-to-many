@@ -17,7 +17,8 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-            'title'=> fake() -> words(3, true),
+
+            'name'=> fake() -> randomElement(['EASY', 'MEDIUM', 'HARD'])
         ];
     }
 }
