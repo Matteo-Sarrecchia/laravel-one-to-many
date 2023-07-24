@@ -18,7 +18,7 @@ class TypeFactory extends Factory
     {
         return [
 
-            'name'=> fake() -> randomElement(['EASY', 'MEDIUM', 'HARD'])
+            'name' => fake() -> words(3, true)
         ];
     }
 }
