@@ -16,6 +16,7 @@
             <li class="list-unstyled p-3">People: {{ $project -> people}}</li>
             <li class="list-unstyled p-3">Date Start: {{ $project -> date_start}}</li>
             <li class="list-unstyled p-3">N° Day: {{ $project -> duration}}</li>
+            <li class="list-unstyled p-3">Type:  {{ $project -> type -> name }}</li>
         </div>
     </div>
 </div>
