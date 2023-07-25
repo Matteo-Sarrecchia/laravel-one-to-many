@@ -17,8 +17,19 @@ class TypeFactory extends Factory
     public function definition()
     {
         return [
-
-            'name' => fake() -> words(3, true)
+            'name' => fake() -> unique() -> randomElement([
+                'programming',
+                'eletronics',
+                'ai',
+                'videogames',
+                'sound',
+                'music',
+                'blockchain web3',
+                'art',
+                'design',
+                'nft'
+            ]),
+            'description' => fake() -> paragraph()
         ];
     }
 }

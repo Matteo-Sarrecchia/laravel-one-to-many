@@ -15,8 +15,6 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
 
-            $table -> unsignedBigInteger('type');
-
             $table -> foreignId('type_id') -> constrained();
 
         });
