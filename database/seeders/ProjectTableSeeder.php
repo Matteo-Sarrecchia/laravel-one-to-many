@@ -17,5 +17,13 @@ class projectTableSeeder extends Seeder
     public function run()
     {
         Project :: factory() -> count(20) -> create();
+
+        foreach ($projects as $project) {
+            
+            $type = type :: inRandomOrder() -> first();
+
+            $project -> type_id = $type -> id;
+            $project -> save();
+        }
     }
 }

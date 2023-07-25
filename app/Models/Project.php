@@ -15,6 +15,12 @@ class project extends Model
         "people",
         "date_start",
         "duration",
-        "description"
+        "description",
+
+        'type_id'
         ];
+
+        public function type(){
+            return this -> belongsTo(Type :: class);
+        }
 }

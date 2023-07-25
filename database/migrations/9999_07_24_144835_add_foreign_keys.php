@@ -13,9 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('types', function (Blueprint $table) {
+        Schema::table('projects', function (Blueprint $table) {
 
-            $table -> unsignedBigInteger('project_id');
+            $table -> unsignedBigInteger('type');
+
+            $table -> foreignId('type_id') -> constrained();
 
         });
 
@@ -28,11 +30,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('types', function (Blueprint $table) {
+        Schema::table('projects', function (Blueprint $table) {
 
-            $table -> dropForeign('types_project_id_foreign');
+            $table -> dropForeign('projects_type_id_foreign');
             
-            $table-> dropColumn('project_id');
+            $table-> dropColumn('type_id');
         });
     }
 };
