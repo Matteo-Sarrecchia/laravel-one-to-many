@@ -29,6 +29,7 @@ class TypeFactory extends Factory
                 'design',
                 'nft'
             ]),
+            
             'description' => fake() -> paragraph()
         ];
     }
