@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 use App\Models\Project;
+use App\Models\Type;
 
 class projectTableSeeder extends Seeder
 {
@@ -20,7 +21,7 @@ class projectTableSeeder extends Seeder
 
         foreach ($projects as $project) {
             
-            $type = type :: inRandomOrder() -> first();
+            $type = Type :: inRandomOrder() -> first();
 
             $project -> type_id = $type -> id;
             $project -> save();
