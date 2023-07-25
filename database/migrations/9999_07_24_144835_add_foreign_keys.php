@@ -19,6 +19,12 @@ return new class extends Migration
 
         });
 
+        Schema::table('project_technologie', function (Blueprint $table) {
+
+            $table -> foreignId('project_id') -> constrained();
+            $table -> foreignId('technologie_id') -> constrained();
+        });
+
     }
 
     /**
@@ -33,6 +39,15 @@ return new class extends Migration
             $table -> dropForeign('projects_type_id_foreign');
             
             $table-> dropColumn('type_id');
+        });
+
+        Schema::table('project_technologie', function (Blueprint $table) {
+            
+            $table -> dropForeign('project_technologie_project_id_foreign');
+            $table-> dropColumn('project_id');
+
+            $table -> dropForeign('project_technologie_technologie_id_foreign');
+            $table-> dropColumn('technologie_id');
         });
     }
 };
