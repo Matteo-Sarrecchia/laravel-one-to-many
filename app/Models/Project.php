@@ -16,6 +16,7 @@ class project extends Model
         "date_start",
         "duration",
         "description",
+        'main_picture',
 
         'type_id'
         ];

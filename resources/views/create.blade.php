@@ -8,11 +8,16 @@
         <form
             method="POST"
             action="{{ route('store') }}"
+            enctype="multipart/form-data"
         >
 
             @csrf
             @method("POST")
 
+            <label for="main_picture">MAIN PICTURE</label>
+            <br>
+            <input type="file" name="main_picture" id="main_picture">
+            <br>
             <label for="title">TITLE</label>
             <br>
             <input type="text" name="title" id="title">

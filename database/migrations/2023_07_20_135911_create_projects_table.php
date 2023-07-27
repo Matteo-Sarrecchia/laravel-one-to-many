@@ -22,6 +22,7 @@ return new class extends Migration
             $table -> string('date_start');
             $table -> integer('duration');
             $table -> text('description');
+            $table -> string('main_picture') -> nullable();
 
             $table->timestamps();
         });

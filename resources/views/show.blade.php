@@ -18,6 +18,18 @@
             <li class="list-unstyled p-3">N° Day: {{ $project -> duration}}</li>
             <li class="list-unstyled p-3">Type:  {{ $project -> type -> name }}</li>
         </div>
+        <div>
+            <h5>Technologies: {{ count($project -> technologies) }}</h5>
+                    <ul>
+                        @foreach ($project -> technologies as $project)
+                            <li>
+                                <a href="{{ route('show', $project -> id) }}">
+                                    {{ $project -> name }}
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+        </div>
     </div>
 </div>
 
